@@ -1,0 +1,28 @@
+/*3) Escreva um programa que leia três lados de um triângulo e classifique-
+o em:
+
+•Equilátero (três lados iguais)
+•Isósceles (dois lados iguais)
+•Escaleno (três lados diferentes)
+•Inválido (se não formar triângulo)*/
+
+const prompt = require('prompt-sync')({singint: true});
+
+let ladoA = prompt('Digite lado A:');
+let ladoB = prompt('Digite lado B:');
+let ladoC = prompt('Digite lado C:');
+
+if (ladoA + ladoB > ladoC && ladoA + ladoC > ladoB && ladoB + ladoC > ladoA) {
+    console.log('É possível formar triangulo!')
+}else {
+    console.log('Inválido! Não é possível formar um triângulo com as medidas passadas.');
+}
+    
+if (ladoA === ladoB && ladoA === ladoC) {
+    console.log('O triângulo é Equilátero!')    
+}else if (ladoA === ladoB || ladoA === ladoC || ladoB === ladoC) {
+    console.log('Isósceles');
+    
+}else{
+    console.log('Escaleno!')
+}
