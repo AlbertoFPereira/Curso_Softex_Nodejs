@@ -1,0 +1,81 @@
+/*Implemente em javaScript um programa que simule um menu interativo no console com 5 opções. Cada opção deve chamar
+uma função específica, utilizando condicionais, estruturas de repetição, arrays, matriz e funções, 
+conforme enunciado acima. Observação importante: o enunciado de cada função está no PDF anexa dentro da pasta "aula_10" */
+
+
+const prompt = require('prompt-sync')({singint: true});
+
+console.log("==--==--==--==--==FUNÇÕES==--==--==--==--==");
+console.log("==--==--==--==--==--==MENU==--==--==--==--==--==");
+console.log("[1] Funcão Idade");
+console.log("[2] Funcão Média");
+console.log("[3] Funcão Crédito");
+console.log("[4] Função Preço");
+console.log("[5] Função Salário");
+console.log("[6] Sair");
+
+let menu = parseInt(prompt("Escolha uma das opções: "));
+
+switch (menu) {
+
+    case 1:
+        let idade = parseInt(prompt('Digite sua idade: '));
+
+        if (idade < 5) {
+            console.log('Você não se enquadra no perfil!');
+
+        if (5 <= idade && idade <= 7) {
+            console.log('Você faz parte do infantil A');
+        }
+        else if (8 <= idade && idade <= 10) {
+            console.log('Você faz parte do infantil B');
+        }
+        else if (11 <= idade && idade <= 13) {
+            console.log('Você faz parte do juvenil A');
+        }         
+        else if (14 <= idade && idade <= 17) {
+            console.log('Você faz parte do juvenil B');
+        }              
+        else if (18 <= idade) {
+            console.log('Você é Adulto(a)');
+        }    
+        break;
+
+
+        
+
+
+
+
+    case 2:
+        console.log("[1] Média Aritimética");
+        console.log("[2] Média Ponderada");
+        console.log("[3] Média harmônica");
+
+        let = parseInt(prompt('Digite sua idade: '));
+        console.log('Estamos no inverno!');
+        break;
+
+
+    case 3:
+        console.log('Estamos no outono!');
+        break;
+
+
+
+    case 4:
+        console.log('Estamos na primavera!');
+        break;
+
+
+
+    case 5:
+        console.log('Estamos na primavera!');
+        break;
+
+
+
+    default:
+        console.log('Error - Digite uma opção válida!')
+        break;
+}

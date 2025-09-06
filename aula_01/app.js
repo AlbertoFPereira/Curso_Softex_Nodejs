@@ -3,6 +3,7 @@
 const prompt = require('prompt-sync')({singint: true});
 
 let estacaoDoAno = prompt('Qual a estação do ano?');
+
 switch (estacaoDoAno) {
     case 'verao':
         console.log('Estamos no verão"');
