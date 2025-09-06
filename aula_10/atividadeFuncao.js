@@ -3,7 +3,7 @@ uma função específica, utilizando condicionais, estruturas de repetição, ar
 conforme enunciado acima. Observação importante: o enunciado de cada função está no PDF anexa dentro da pasta "aula_10" */
 
 
-const prompt = require('prompt-sync')({singint: true});
+const prompt = require('prompt-sync')({sigint: true});
 
 console.log("==--==--==--==--==FUNÇÕES==--==--==--==--==");
 console.log("==--==--==--==--==--==MENU==--==--==--==--==--==");
@@ -23,7 +23,7 @@ switch (menu) {
 
         if (idade < 5) {
             console.log('Você não se enquadra no perfil!');
-
+        }
         if (5 <= idade && idade <= 7) {
             console.log('Você faz parte do infantil A');
         }
@@ -40,31 +40,58 @@ switch (menu) {
             console.log('Você é Adulto(a)');
         }    
         break;
-
-
         
-
-
-
-
     case 2:
         console.log("[1] Média Aritimética");
         console.log("[2] Média Ponderada");
         console.log("[3] Média harmônica");
 
-        let = parseInt(prompt('Digite sua idade: '));
-        console.log('Estamos no inverno!');
+        let media = parseInt(prompt("Escolha o tipo de média: "));
+
+        switch (media) {
+            case 1:
+        
+            let nota_01 = parseInt(prompt('Digite sua primeira nota: '));
+            let nota_02 = parseInt(prompt('Digite sua segunda nota: '));
+            let nota_03 = parseInt(prompt('Digite sua terceira nota: '));
+
+            let mediaA = (nota_01 + nota_02 + nota_03) / 3;
+
+            if (mediaA < 7) {
+                console.log('Sua média é igual a: '+ mediaA.toFixed(2) +" e você está reprovado!");        
+            }
+            
         break;
+    }
+
+        
 
 
-    case 3:
+    /*case 3:
+        let nota_04 = parseInt(prompt('Digite sua primeira nota: '));
+        let nota_05 = parseInt(prompt('Digite sua segunda nota: '));
+        let nota_06 = parseInt(prompt('Digite sua primeira nota: '));
+
+        mediaP = (nota_04 + nota_05 + nota_06) / 3;
+
+
+        
+        break;
+    case 'outono':
         console.log('Estamos no outono!');
         break;
-
+    case 'primavera':
+        console.log('Estamos na primavera!');
+        break;
+    default:
+        console.log('Esta estação do ano não existe!')
+        break;
+        
+        
 
 
     case 4:
-        console.log('Estamos na primavera!');
+        console.log('Estamos no outono!');
         break;
 
 
@@ -75,7 +102,15 @@ switch (menu) {
 
 
 
+    case 6:
+        console.log('Estamos na primavera!');
+        break;
+
+
     default:
         console.log('Error - Digite uma opção válida!')
-        break;
-}
+        break; */
+
+
+} 
+
