@@ -1,6 +1,6 @@
 /*Implemente em javaScript um programa que simule um menu interativo no console com 5 opções. Cada opção deve chamar
 uma função específica, utilizando condicionais, estruturas de repetição, arrays, matriz e funções, 
-conforme enunciado acima. Observação importante: o enunciado de cada função está no PDF anexa dentro da pasta "aula_10" */
+conforme enunciado acima. Observação importante: o enunciado de cada função está no PDF anexado dentro da pasta "aula_10" */
 
 
 const prompt = require('prompt-sync')({sigint: true});
@@ -49,18 +49,30 @@ switch (menu) {
         let media = parseInt(prompt("Escolha o tipo de média: "));
 
         switch (media) {
-            case 1:
-        
-            let nota_01 = parseInt(prompt('Digite sua primeira nota: '));
-            let nota_02 = parseInt(prompt('Digite sua segunda nota: '));
-            let nota_03 = parseInt(prompt('Digite sua terceira nota: '));
+            case 1:        
+                let nota_01 = parseInt(prompt('Digite sua primeira nota: '));
+                let nota_02 = parseInt(prompt('Digite sua segunda nota: '));
+                let nota_03 = parseInt(prompt('Digite sua terceira nota: '));
 
-            let mediaA = (nota_01 + nota_02 + nota_03) / 3;
+                let mediaA = (nota_01 + nota_02 + nota_03) / 3;
 
-            if (mediaA < 7) {
-                console.log('Sua média é igual a: '+ mediaA.toFixed(2) +" e você está reprovado!");        
-            }
-            
+                if (mediaA < 7) {
+                    console.log('Sua média é igual a: '+ mediaA.toFixed(2) +" e você está reprovado!"); 
+                }
+                else if (7 <= mediaA) {
+                    console.log('Sua média é igual a: '+ mediaA.toFixed(2) +" e você está aprovado!"); 
+                }
+                    
+                    
+                    
+            case 2:
+                let nota_04 = parseInt(prompt('Digite sua primeira nota: '));
+                let nota_05 = parseInt(prompt('Digite sua segunda nota: '));
+                let nota_06 = parseInt(prompt('Digite sua terceira nota: '));                
+
+                const peso = (nota_04 * 3) + (nota_05 * 3) + (nota_06 * 4);
+                let mediaP = (peso / 10);
+
         break;
     }
 
@@ -104,12 +116,12 @@ switch (menu) {
 
     case 6:
         console.log('Estamos na primavera!');
-        break;
+        break; */
 
 
     default:
         console.log('Error - Digite uma opção válida!')
-        break; */
+        break;
 
 
 } 
