@@ -24,7 +24,7 @@ Roteiro:
 //Definição de Classe
 
 class Carro{
-constructor(marca, cor, ano,){
+constructor(marca, cor, ano){
 
    this.marca = marca;
    this.cor = cor;
