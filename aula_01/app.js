@@ -1,6 +1,6 @@
 
 
-const prompt = require('prompt-sync')({singint: true});
+const prompt = require('prompt-sync')({sigint: true});
 
 let estacaoDoAno = prompt('Qual a estação do ano?');
 
