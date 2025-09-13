@@ -28,16 +28,16 @@ class ContaBancaria{
     // Depositar dinheiro na conta
     depositar(valor){
         this.saldo += valor;
-        console.log(`Foi depositado em sua conta, ${this.titular}, o valor de R$${valor}. Seu saldo agora é de ${this.saldo}.`);
+        console.log(`Foi depositado em sua conta, ${this.titular}, o valor de R$${valor}.`);
     }
 
     //Sacar dinheiro da conta
     sacar(valor){           
         if (valor <= this.saldo){
             this.saldo -= valor;
-            console.log(`Foi sacado da sua conta, ${this.titular}, o valor de ${valor}, e seu saldo agora é de ${this.saldo}`);
+            console.log(`Foi sacado da sua conta, ${this.titular}, o valor de ${valor}.`);
         } else{
-            console.log("Seu saldo é insuficiente para realização do saque solicitado!");            
+            console.log(`Seu saldo é insuficiente para realização do saque solicitado de ${valor}!`);            
         }
     }
 
@@ -49,14 +49,25 @@ class ContaBancaria{
 }
 
 let conta1 = new ContaBancaria("Alberto", 1000);
+let conta2 = new ContaBancaria("Ericson",5000);
 
-/*console.log(conta1);
-console.mostrarSaldo();
-conta1.depositar(500)
-console.mostrarSaldo();
-conta1.sacar(200);
-console.mostrarSaldo();*/
+console.log("-----------------------------------");
+console.log("Conta de Alberto");
+
+conta1.mostrarSaldo();
+conta1.depositar(500);
+conta1.mostrarSaldo();
 conta1.sacar(2000);
 conta1.mostrarSaldo();
+conta1.sacar(200);
+conta1.mostrarSaldo();
+
+console.log("-----------------------------------");
+console.log("Conta de Ericson");
+
+conta2.mostrarSaldo();
+
+
+
 
 
