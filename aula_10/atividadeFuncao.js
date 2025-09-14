@@ -9,7 +9,7 @@ const prompt = require('prompt-sync')({sigint: true});
 console.log('|--------|---------------------------|-----------------------------------|');
 console.log('|    1   | Classificar Nadador       | Turma x Idade                     |');
 console.log('|    2   | Calcular Média            | Média entre 3 notas               |');
-console.log('|    3   | Calcular Cérdito          | Retorna valor médio e crédito     |');
+console.log('|    3   | Calcular Crédito          | Retorna valor médio e crédito     |');
 console.log('|    4   | Calcular Débito Total     | Quant. de produto com valor total |');
 console.log('|    5   | Calcular Aumento Salarial | Acrércimo por percentual          |');
 console.log('|    6   | Menu                      | Sair do Menu Principal            |');
