@@ -2,24 +2,30 @@
 uma função específica, utilizando condicionais, estruturas de repetição, arrays, matriz e funções, 
 conforme enunciado acima. Observação importante: o enunciado de cada função está no PDF anexado dentro da pasta "aula_10" */
 
-
+//chamando a biblioteca prompt-sync para gerar os prompts
 const prompt = require('prompt-sync')({sigint: true});
 
-    console.log('|--------|---------------------------|-----------------------------------|');
-    console.log('|    1   | Classificar Nadador       | Turma x Idade                     |');
-    console.log('|    2   | Calcular Média            | Média entre 3 notas               |');
-    console.log('|    3   | Calcular Cérdito          | Retorna valor médio e crédito     |');
-    console.log('|    4   | Calcular Débito Total     | Quant. de produto com valor total |');
-    console.log('|    5   | Calcular Aumento Salarial | Acrércimo por percentual          |');
-    console.log('|    6   | Menu                      | Sair do Menu Principal            |');
+//Chama o menu principal 
+console.log('|--------|---------------------------|-----------------------------------|');
+console.log('|    1   | Classificar Nadador       | Turma x Idade                     |');
+console.log('|    2   | Calcular Média            | Média entre 3 notas               |');
+console.log('|    3   | Calcular Cérdito          | Retorna valor médio e crédito     |');
+console.log('|    4   | Calcular Débito Total     | Quant. de produto com valor total |');
+console.log('|    5   | Calcular Aumento Salarial | Acrércimo por percentual          |');
+console.log('|    6   | Menu                      | Sair do Menu Principal            |');
 
+
+//Usuário escolhe uma opção
 let menu = parseInt(prompt("Escolha uma das opções: "));
+
 
 switch (menu) {
 
+    //Coleta a idade do usuário 
     case 1:
         let idade = parseInt(prompt('Digite sua idade: '));
 
+        //Verificação da idade informada pelo usuário e classificação da sua categoria
         if (idade < 5) {
             console.log('Você não se enquadra no perfil!');
         }
@@ -39,7 +45,9 @@ switch (menu) {
             console.log('Você é Adulto(a)');
         }    
         break;
-        
+
+
+    //Chama o menu "Média"    
     case 2:
         console.log('-= FUNÇÃO MÉDIA DE TRÊS NOTAS -=-');
         console.log('| Código | Cargo                |');
@@ -51,14 +59,17 @@ switch (menu) {
 
         let media = parseInt(prompt("Escolha o tipo de média: "));
 
+
+        //Verificação das 3 notas informadas pelo usuário / Cálcula da média / Status Aprovado / Reprovado
         switch (media) {
 
+            //Colate da notas (Média Aritimética)
             case 1:        
                 let nota_01 = parseInt(prompt('Digite sua primeira nota: '));
                 let nota_02 = parseInt(prompt('Digite sua segunda nota: '));
                 let nota_03 = parseInt(prompt('Digite sua terceira nota: '));
 
-
+                //Valida se as notas não são negativas
                 if (nota_01 >= 0 && nota_01 <= 10 && nota_02 >= 0 && nota_02 <= 10 && nota_03 >= 0 && nota_03 <= 10) {
                     let mediaA = (nota_01 + nota_02 + nota_03) / 3;
 
@@ -71,12 +82,14 @@ switch (menu) {
                     console.log("Error - Notas devem conter apenas números de 0 a 10!")
                      }    
                 break; 
-                    
+            
+            //Colate da notas (Média Ponderada)
             case 2:
                 let nota_04 = parseInt(prompt('Digite sua primeira nota: '));
                 let nota_05 = parseInt(prompt('Digite sua segunda nota: '));
                 let nota_06 = parseInt(prompt('Digite sua terceira nota: '));
-
+               
+                //Valida se as notas não são negativas
                 if (nota_04 >= 0 && nota_04 <= 10 && nota_05 >= 0 && nota_05 <= 10 && nota_06 >= 0 && nota_06 <= 10) {
                    
                     let mediaP = (nota_04 * 3 + nota_05 * 3 + nota_06 * 4) / (3 + 3 + 4);
@@ -91,12 +104,13 @@ switch (menu) {
                 }
                 break;
                     
-            
+            //Colate da notas (Média Harmônica)
             case 3:
                  let nota_07 = parseInt(prompt('Digite sua primeira nota: '));
                  let nota_08 = parseInt(prompt('Digite sua segunda nota: '));
                  let nota_09 = parseInt(prompt('Digite sua primeira nota: '));
             
+                //Valida se as notas não são negativas 
                 if (nota_07 >= 0 && nota_07 <= 10 && nota_08 >= 0 && nota_08 <= 10 && nota_09 >= 0 && nota_09 <= 10) {
                     let mediaH = 3 / (1 / nota_07 + 1 / nota_08 + 1 / nota_09);
                     if (mediaH < 7) {
@@ -109,7 +123,7 @@ switch (menu) {
                 break;
         }
 
-
+    //função valida se o cliente tem saldo para ter acesso a crédito    
     case 3:
         function calcularCredito() {
         let nun = parseInt(prompt('Digite um número: '))
@@ -136,7 +150,7 @@ switch (menu) {
     }
     break;        
 
-
+    //função para calcular o débito de compra do cliente
     case 4:
         function calcularDebido() {    
         let menu = parseInt(prompt('Escolha um código do MENU: '));
@@ -190,7 +204,7 @@ switch (menu) {
                 break;
                             
 
-
+    //capitura do código do cardo e salário do funcionário
     case 5:
         let codCargo = parseFloat(prompt('Digite o código do funcionário ou deixe em branco: '));
         let salarioFuncionario = parseFloat(prompt('Digite o salário do funcionário: '));
