@@ -274,9 +274,7 @@ switch (menu) {
             console.log(`Valor do Acrescimo R$${diferencaEntreSalarios.toFixed(2)}`);
             console.log('=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=');
             break;           
-        } 
-
-
+        }
     default:
         console.log('Sair - Saindo do MENU Principal!')
         break;
