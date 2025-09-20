@@ -19,7 +19,7 @@ const prompt = require('prompt-sync')({ sigint: true }); // chamar a biblioteca
 
 
 
-// Valida se o nome não é numérico e não está vazio
+// Valida se o nome não é numérico e não está vazio evitando números no nome do aluno
 function lerNome() {
   while (true) {
     const nome = prompt('Digite o nome do aluno: ').trim();
@@ -31,13 +31,13 @@ function lerNome() {
   }
 }
 
-// Valida se a quantidade de aulas é um número válido
+// Valida se a quantidade de aulas é um número válido, e não um nome
 function lerQuantidadeAulas() {
   while (true) {
     const entrada = prompt('Digite a quantidade de aulas realizadas: ').trim();
     const numero = Number(entrada);
 
-    // Verifica se é número e não é NaN e é >= 0
+    // Verifica se é número e se não é NaN e é >= 0
     if (!isNaN(numero) && numero >= 0) {
       return numero;
     }
@@ -49,7 +49,7 @@ function lerQuantidadeAulas() {
 let nome = lerNome();
 let quantAula = lerQuantidadeAulas();
 
-// ===== Classe Aluno =====
+// Criação da classe do aluno
 class Aluno {
   constructor(nome, aulas) {
     this.nome = nome;
@@ -57,12 +57,14 @@ class Aluno {
     this.nivel = this.definirNivel();
   }
 
+  //Definir o nível de habilidade do aluno (iniciante, intermediário, avançado) com base na de aulas realizadas
   definirNivel() {
     if (this.aulas < 10) return 'iniciante';
-    else if (this.aulas < 20) return 'intermediário';
+    else if (this.aulas < 20 && this.aulas >= 10) return 'intermediário';
     else return 'avançado';
   }
 
+  //Armazenar o progresso do aluno para exibição das informações ao final da colata de dados
   progresso() {
     const apto = this.nivel === 'avançado';
     return {
