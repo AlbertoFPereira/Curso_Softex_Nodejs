@@ -13,41 +13,72 @@ O sistema deve mostrar o progresso do aluno e indicar se ele está apto para o e
 Implemente em JavaScript uma aplicação orientada a objetos que simule esse processo. */
 
 
+
+
+const prompt = require('prompt-sync')({ sigint: true }); // chamar a biblioteca
+
+
+
+// Valida se o nome não é numérico e não está vazio
+function lerNome() {
+  while (true) {
+    const nome = prompt('Digite o nome do aluno: ').trim();
+    // isNaN(nome) retorna true se não for um número
+    if (nome && isNaN(nome)) {
+      return nome;
+    }
+    console.log('Nome Inválido! Tente novamente.');
+  }
+}
+
+// Valida se a quantidade de aulas é um número válido
+function lerQuantidadeAulas() {
+  while (true) {
+    const entrada = prompt('Digite a quantidade de aulas realizadas: ').trim();
+    const numero = Number(entrada);
+
+    // Verifica se é número e não é NaN e é >= 0
+    if (!isNaN(numero) && numero >= 0) {
+      return numero;
+    }
+    console.log('Quantidade Inválida! Tente novamente.');
+  }
+}
+
+// ===== Coleta de dados com validação =====
+let nome = lerNome();
+let quantAula = lerQuantidadeAulas();
+
+// ===== Classe Aluno =====
 class Aluno {
-  constructor(nome) {
+  constructor(nome, aulas) {
     this.nome = nome;
-    this.nivel = "iniciante";
-    this.aulas = 0;
+    this.aulas = aulas;
+    this.nivel = this.definirNivel();
   }
 
-  registrarAula() {
-    this.aulas++;
-
-    // Atualiza o nível conforme a quantidade de aulas
-    if (this.aulas >= 10 && this.aulas < 20) {
-      this.nivel = "intermediário";
-    } else if (this.aulas >= 20) {
-      this.nivel = "avançado";
-    }
+  definirNivel() {
+    if (this.aulas < 10) return 'iniciante';
+    else if (this.aulas < 20) return 'intermediário';
+    else return 'avançado';
   }
 
   progresso() {
-    const apto = this.nivel === "avançado";
+    const apto = this.nivel === 'avançado';
     return {
       nome: this.nome,
-      nivel: this.nivel,
       aulas: this.aulas,
+      nivel: this.nivel,
       aptoParaExame: apto
     };
   }
 }
 
-// ======== Demonstração ========
-const aluno1 = new Aluno("Maria");
+// ===== Criação do aluno e exibição =====
+const aluno1 = new Aluno(nome, quantAula);
 
-// Simula aulas
-for (let i = 0; i < 22; i++) {
-  aluno1.registrarAula();
-}
-
-console.log(aluno1.progresso());
+console.log('\n=== Progresso do Aluno ===');
+console.log(`Nome: ${aluno1.nome}`);
+console.log(`Aulas realizadas: ${aluno1.aulas}`);
+console.log(`Nível: ${aluno1.nivel}`);
+console.log(`Apto para exame prático: ${aluno1.progresso().aptoParaExame ? 'Sim' : 'Não'}`);
