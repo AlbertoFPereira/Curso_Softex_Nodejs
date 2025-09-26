@@ -2,28 +2,28 @@
 
 1 - Criar uma classe chamada Paciente que deve possuir os seguintes atributos:
 
-a) nome (texto)
-b) idade (número)
-c) telefone (texto)
+    a) nome (texto)
+    b) idade (número)
+    c) telefone (texto)
 
 Essa classe deve conter um método chamado exibirInfo(), que mostre as informações do paciente no console.
 
 2 - Criar uma classe chamada Clínica que deve possuir os seguintes atributos:
 
-a) nome (texto)
-b) pacientes (lista para armazenar objetos do tipo Paciente).
+    a) nome (texto)
+    b) pacientes (lista para armazenar objetos do tipo Paciente).
 
 Essa classe deve conter os seguintes métodos:
 
-a) adicionarPaciente(paciente) → adiciona um paciente à lista.
-b) listarPacientes() → exibe no console todos os pacientes cadastrados na clínica.
+    a) adicionarPaciente(paciente) → adiciona um paciente à lista.
+    b) listarPacientes() → exibe no console todos os pacientes cadastrados na clínica.
 
 3 - No programa principal:
 
-a) Criar uma clínica chamada "Clínica Bem Estar".
-b) Cadastrar pelo menos três pacientes diferentes com nome, idade e telefone.
-c) Exibir no console a confirmação do cadastro de cada paciente.
-d) Listar todos os pacientes cadastrados na clínica. */
+    a) Criar uma clínica chamada "Clínica Bem Estar".
+    b) Cadastrar pelo menos três pacientes diferentes com nome, idade e telefone.
+    c) Exibir no console a confirmação do cadastro de cada paciente.
+    d) Listar todos os pacientes cadastrados na clínica. */
 
 
 class Paciente {
