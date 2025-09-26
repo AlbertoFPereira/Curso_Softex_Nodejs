@@ -35,10 +35,56 @@ class Jogador {
     }
     adicionarPontos(pontos){
         this.pontuacao += pontos;
-        console.log(pontuacao);        
+        console.log(this.pontuacao);        
+    }
+    removerPontos(pontos){
+        this.pontuacao -= pontos;
+        if (this.pontuacao < 0) {
+            this.pontuacao = 0;
+        }
+        console.log(this.pontuacao);
+    }
+    exibirStatus(){           
+      console.log(`Jogador: ${this.nome}`);
+      console.log(`Pontuação atual: ${this.pontuacao}`);      
+      console.log("-----------------------");
+   } 
+}
+
+class Jogo {
+    constructor(nome) {
+        this.nome = nome;
+        this.jogadores = [];        
+    }
+    adicionarJogador(jogador){
+        this.jogadores.push(jogador);
+    }
+    mostrarPontuacoes(){
+        console.log(`Placar do jogo: ${this.nome}`);
+        this.jogadores.forEach(j => {
+            console.log(`${j.nome}: ${j.pontuacao}`);
+        })
+        console.log(this.jogadores);
     }
 }
 
-let jogador1 = new Jogador("Alberto", "40");
+let jogador1 = new Jogador("Alberto");
+let jogador2 = new jogador("Ericson")
+let jogador3 = new jogador("Niedja")
+
+let jogo1 = new Jogo("Aventura Épica")
+
+jogador1.adicionarPontos(50);
+jogador1.removerPontos(10);
+jogador1.exibirStatus();
+
+jogador2.adicionarPontos(100);
+jogador2.removerPontos(20);
+jogador2.exibirStatus();
+
+jogador3.adicionarPontos(20);
+jogador3.removerPontos(10);
+jogador3.exibirStatus();
 
 
+jogo1.mostrarPontuacoes();
