@@ -42,6 +42,7 @@ class Jogador {
       return;
     }
     this.pontuacao += pontos;
+    console.log(`Jogador: ${this.nome}`);
     console.log(`Ganhou: ${this.pontuacao}`);
   }
 
@@ -59,7 +60,6 @@ class Jogador {
   }
 
   exibirStatus() {
-    console.log(`Jogador: ${this.nome}`);
     console.log(`Pontuação atual: ${this.pontuacao}`);
     console.log('-----------------------');
   }
