@@ -37,17 +37,17 @@ class Jogador {
 
   adicionarPontos(pontos) {
     // validação simples: aceita apenas números positivos
-    if (typeof pontos !== 'number' || pontos <= 0) {
+    if (typeof pontos !== 'number' || pontos < 0) {
       console.log('Valor inválido para adicionar pontos.');
       return;
     }
     this.pontuacao += pontos;
-    console.log(this.pontuacao);
+    console.log(`Ganhou: ${this.pontuacao}`);
   }
 
   removerPontos(pontos) {
     // validação simples: aceita apenas números positivos
-    if (typeof pontos !== 'number' || pontos <= 0) {
+    if (typeof pontos !== 'number' || pontos < 0) {
       console.log('Valor inválido para remover pontos.');
       return;
     }
@@ -55,7 +55,7 @@ class Jogador {
     if (this.pontuacao < 0) { // garante que não vire negativo
       this.pontuacao = 0;
     }
-    console.log(this.pontuacao);
+    console.log(`Perdeu: ${this.pontuacao}`);
   }
 
   exibirStatus() {
@@ -96,7 +96,7 @@ const jogador3 = new Jogador('Niedja');
 
 const jogo1 = new Jogo('Aventura Épica');
 
-jogador1.adicionarPontos(50);
+jogador1.adicionarPontos(50)
 jogador1.removerPontos(10);
 jogador1.exibirStatus();
 
@@ -113,6 +113,4 @@ jogo1.adicionarJogador(jogador2);
 jogo1.adicionarJogador(jogador3);
 
 jogo1.mostrarPontuacoes();
-
-
 
